@@ -3,7 +3,7 @@ package by.vfedorenko.letsgetdrunk.presentation.events.viewmodels
 import android.util.Log
 import android.view.View
 import by.vfedorenko.letsgetdrunk.businesslogic.interactors.EventsInteractor
-import by.vfedorenko.letsgetdrunk.presentation.events.activities.EventActivity
+import by.vfedorenko.letsgetdrunk.presentation.events.activities.CreateEventActivity
 import by.vfedorenko.letsgetdrunk.presentation.events.adapters.EventsAdapter
 import javax.inject.Inject
 
@@ -22,6 +22,6 @@ class EventsViewModel @Inject constructor(val interactor: EventsInteractor) {
     }
 
     fun onAddClick(v: View) {
-        v.context.startActivity(EventActivity.createIntent(v.context))
+        v.context.startActivity(CreateEventActivity.createIntent(v.context))
     }
 }

@@ -1,5 +1,6 @@
 package by.vfedorenko.letsgetdrunk.presentation.events.assemblies
 
+import by.vfedorenko.letsgetdrunk.presentation.events.activities.CreateEventActivity
 import by.vfedorenko.letsgetdrunk.presentation.events.activities.EventsActivity
 import dagger.Subcomponent
 
@@ -9,4 +10,5 @@ import dagger.Subcomponent
 @Subcomponent
 interface EventsComponent {
     fun inject(activity: EventsActivity)
+    fun inject(activity: CreateEventActivity)
 }

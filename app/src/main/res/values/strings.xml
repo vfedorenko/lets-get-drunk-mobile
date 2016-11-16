@@ -10,4 +10,8 @@
     <string name="register">Register</string>
     <string name="sign_in">Sign In</string>
     <string name="title_activity_events">Events</string>
+    <string name="title_activity_event">Parties</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="done">Make a Party!!!</string>
 </resources>

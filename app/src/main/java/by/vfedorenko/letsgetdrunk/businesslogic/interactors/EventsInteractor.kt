@@ -14,4 +14,8 @@ class EventsInteractor @Inject constructor(val eventsService: EventsService) {
     fun getEvents(): Single<List<Event>> = eventsService.getEvents()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+
+    fun createEvent(event: Event): Single<Event> = eventsService.createEvent(event)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
 }
