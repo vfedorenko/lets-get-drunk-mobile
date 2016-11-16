@@ -17,6 +17,7 @@ import by.vfedorenko.letsgetdrunk.presentation.login.assemblies.LoginComponent
 class App : Application() {
     companion object {
         const val EMPTY_STRING = ""
+        const val NO_ID = -1L
     }
 
     val appComponent: AppComponent by lazy {

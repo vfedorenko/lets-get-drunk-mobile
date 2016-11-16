@@ -1,8 +1,8 @@
 package by.vfedorenko.letsgetdrunk.presentation.login.viewmodels
 
-import android.content.Context
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import by.vfedorenko.letsgetdrunk.businesslogic.interactors.LoginInteractor
@@ -66,9 +66,10 @@ class LoginViewModel @Inject constructor(val loginInteractor: LoginInteractor) {
         requestFocus.set(isRegistration.get())
     }
 
-    fun init(context: Context) {
+    fun init(activity: AppCompatActivity) {
         if (loginInteractor.isLoggedIn()) {
-            context.startActivity(EventsActivity.createIntent(context))
+            activity.startActivity(EventsActivity.createIntent(activity))
+            activity.finish()
         }
     }
 }

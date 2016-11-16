@@ -1,6 +1,7 @@
 package by.vfedorenko.letsgetdrunk.businesslogic.assemblies
 
 import by.vfedorenko.letsgetdrunk.businesslogic.utils.AuthorizedUserManager
+import by.vfedorenko.letsgetdrunk.businesslogic.webapi.EventsService
 import by.vfedorenko.letsgetdrunk.businesslogic.webapi.UserService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -20,6 +21,10 @@ import javax.inject.Singleton
 class NetworkModule {
     @Singleton
     @Provides
+    fun provideEventsService(retrofit: Retrofit): EventsService = retrofit.create(EventsService::class.java)
+
+    @Singleton
+    @Provides
     fun provideUserService(retrofit: Retrofit): UserService = retrofit.create(UserService::class.java)
 
     @Singleton
@@ -37,12 +42,9 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideOkHttpClient(interceptor: Interceptor): OkHttpClient {
-        val client = OkHttpClient()
-        client.interceptors().toMutableList().add(interceptor)
-
-        return client
-    }
+    fun provideOkHttpClient(interceptor: Interceptor) = OkHttpClient.Builder()
+            .addInterceptor(interceptor)
+            .build()
 
     @Singleton
     @Provides

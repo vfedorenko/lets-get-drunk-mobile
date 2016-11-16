@@ -38,7 +38,7 @@ class LoginInteractor @Inject constructor(val userService: UserService,
             val token = response.headers().get("access-token")
             val client = response.headers().get("client")
             val uid = response.headers().get("uid")
-
+            
             if (!token.isEmpty() && !client.isEmpty() && !uid.isEmpty()) {
                 authorizedUserManager.saveToken(token)
                 authorizedUserManager.saveClient(client)
