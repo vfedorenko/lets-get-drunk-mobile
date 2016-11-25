@@ -6,6 +6,7 @@ import by.vfedorenko.letsgetdrunk.presentation.assemblies.AppComponent
 import by.vfedorenko.letsgetdrunk.presentation.assemblies.AppModule
 import by.vfedorenko.letsgetdrunk.presentation.assemblies.DaggerAppComponent
 import by.vfedorenko.letsgetdrunk.presentation.events.activities.CreateEventActivity
+import by.vfedorenko.letsgetdrunk.presentation.events.activities.EventDetailsActivity
 import by.vfedorenko.letsgetdrunk.presentation.events.activities.EventsActivity
 import by.vfedorenko.letsgetdrunk.presentation.events.assemblies.EventsComponent
 import by.vfedorenko.letsgetdrunk.presentation.login.LoginActivity
@@ -39,6 +40,7 @@ class App : Application() {
             is LoginActivity -> loginComponent.inject(activity)
             is EventsActivity -> eventsComponent.inject(activity)
             is CreateEventActivity -> eventsComponent.inject(activity)
+            is EventDetailsActivity -> eventsComponent.inject(activity)
         }
     }
 }

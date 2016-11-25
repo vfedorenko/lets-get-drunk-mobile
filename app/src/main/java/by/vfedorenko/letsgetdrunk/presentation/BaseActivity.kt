@@ -18,12 +18,8 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         Toast.makeText(this, "Error: $msg", Toast.LENGTH_SHORT).show()
     }
 
-    fun setupToolbar(toolbar: Toolbar, hasBack: Boolean = false, title: String = App.EMPTY_STRING) {
+    fun setupToolbar(toolbar: Toolbar, hasBack: Boolean = false) {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(hasBack)
-
-        if (title.isNotEmpty()) {
-            supportActionBar?.title = title
-        }
     }
 }

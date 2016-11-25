@@ -21,6 +21,7 @@ class EventDetailsViewModel @Inject constructor(val interactor: EventsInteractor
     fun setDescription(description: String) {
         event.description = description
     }
+    fun getImageUrl() = event.imageUrl
 
     fun onDoneClick(v: View) {
         interactor.createEvent(event)

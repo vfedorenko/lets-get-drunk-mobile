@@ -2,6 +2,7 @@ package by.vfedorenko.letsgetdrunk.presentation.events.viewmodels
 
 import android.view.View
 import by.vfedorenko.letsgetdrunk.entities.Event
+import by.vfedorenko.letsgetdrunk.presentation.events.activities.EventDetailsActivity
 
 /**
  * @author Vlad Fedorenko <vfedo92@gmail.com> on 08.11.16.
@@ -17,6 +18,6 @@ class EventItemViewModel {
     fun getDescription() = event.description
 
     fun onEventClick(v: View) {
-        // TODO start details
+        v.context.startActivity(EventDetailsActivity.createIntent(v.context))
     }
 }

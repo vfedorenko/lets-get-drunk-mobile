@@ -45,7 +45,11 @@
             android:name=".presentation.events.activities.CreateEventActivity"
             android:label="@string/title_activity_event"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".presentation.BaseActivity"></activity>
+        <activity android:name=".presentation.BaseActivity" />
+        <activity
+            android:name=".presentation.events.activities.EventDetailsActivity"
+            android:label="@string/title_activity_event_details"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
